@@ -17,3 +17,5 @@ id_proyecto int not null auto_increment,
 constraint fk_participante_proyecto foreign key (id_proyecto) references proyecto(id_proyecto));
 alter table proyecto
 add nombre_proyecto varchar(150);
+alter table participante
+add column nombre_apellido varchar(150) not null;
