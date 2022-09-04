@@ -14,4 +14,5 @@ hora_max int not null,
 rol varchar(100) not null,
 id_proyecto int not null auto_increment,
 constraint fk_participante_proyecto foreign key (id_proyecto) references proyecto(id_proyecto));
-
+alter table proyecto
+add nombre_proyecto varchar(150);
