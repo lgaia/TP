@@ -21,6 +21,7 @@ create table proyecto (
 create table participante (
   id_legajo int autoincrement primary key,
   nombre_apellido varchar(150),
+  rol varchar(255),
   hora_diaria int,
   id_proyecto int,
   constraint fk_participante_proyecto foreign key (id_proyecto) references proyecto (id_proyecto)
