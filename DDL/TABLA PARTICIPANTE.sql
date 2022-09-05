@@ -1,23 +1,25 @@
 use bdd2;
-insert into participante (id_legajo, hora_max, rol, id_proyecto,nombre_apellido)
-values (1, 100, "admin", 1, "juan gomez");
-insert into participante (hora_max, rol, id_proyecto, nombre_apellido)
-values (160, "manager", 2, "carlos perez");
-insert into participante (hora_max, rol, id_proyecto, nombre_apellido)
-values (200, "desarrolladora", 3, "julieta fernandez");
-insert into participante (hora_max, rol, id_proyecto, nombre_apellido)
-values (80, "manager", 4, "ana maria gutierrez");
-insert into participante (hora_max, rol, id_proyecto, nombre_apellido)
-values (220, "desarrollador", 5, "roberto mendez");
-insert into participante (hora_max, rol, id_proyecto, nombre_apellido)
-values (80, "ceo", 6, "carolina suarez");
-insert into participante (hora_max, rol, id_proyecto, nombre_apellido)
-values (70, "programador", 7, "marcelo alvarez");
-insert into participante (hora_max, rol, id_proyecto, nombre_apellido)
-values (100, "admin", 8, "marianela martinez");
-insert into participante (hora_max, rol, id_proyecto, nombre_apellido)
-values (180, "desarrolladora", 9, "selena martinelli");
-insert into participante (hora_max, rol, id_proyecto, nombre_apellido)
-values (40, "manager", 10, "alberto crosse");
-select * from participante;
-
+insert into participante (id_legajo, nombre_apellido, id_proyecto)
+values (1,"juan gomez",1);
+insert into participante (id_legajo, nombre_apellido, id_proyecto)
+values (2,"marcelo centeno",2);
+insert into participante (id_legajo, nombre_apellido, id_proyecto)
+values (3,"roberto alvarez",3);
+insert into participante (id_legajo, nombre_apellido, id_proyecto)
+values (4,"clara perez",4);
+insert into participante (id_legajo, nombre_apellido, id_proyecto)
+values (5,"ana maria gutierrez",5);
+insert into participante (id_legajo, nombre_apellido, id_proyecto)
+values (6,"antonio martinez",6);
+insert into participante (id_legajo, nombre_apellido, id_proyecto)
+values (7,"julieta cerreti",7);
+insert into participante (id_legajo, nombre_apellido, id_proyecto)
+values (8,"abigail gomez",8);
+insert into participante (id_legajo, nombre_apellido, id_proyecto)
+values (9,"selena solerinni",9);
+insert into participante (id_legajo, nombre_apellido, id_proyecto)
+values (10,"franco perez",10);
+insert into participante (id_legajo, nombre_apellido, id_proyecto)
+values (11,"carlos regetti",1);
+insert into participante (id_legajo, nombre_apellido, id_proyecto)
+values (12,"paula iriani",2);
