@@ -24,7 +24,7 @@ constraint fk_participante_proyecto foreign key id_proyecto references proyecto(
 );
 create table liquidacion (
   horas_proyecto int,
-  horas_cliente,
+  horas_cliente int,
   constraint fk_liquidacion_proyecto foreign key horas_proyecto references proyecto(hora_proyecto),
   constraint fk_liquidacion_cliente foreign key horas_cliente references cliente(horas_mensual)
 );
