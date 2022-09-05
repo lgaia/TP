@@ -1,10 +1,11 @@
 use bdd2;
 DELIMITER $$
-create procedure RendicionDeHoras(IN @id_legajo int, IN @horas_diarias)
+create procedure RendicionDeHoras(IN idproyecto int, )
 begin
-   update table participante
-   set hora_diaria=@horas_diarias
-   where id_legajo=@id_legajo;
+INSERT INTO liquidacion (horas_proyecto)
+SELECT SUM(horas_diarias)
+FROM participante
+WHERE id_proyecto=@idproyecto
 end
 $$
 DELIMITER;
