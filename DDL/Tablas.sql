@@ -18,6 +18,7 @@ nombre_apellido varchar(150),
 horas_diarias int,
 rol varchar(255),
 id_proyecto int,
+fecha datetime,
 constraint fk_participante_proyecto foreign key id_proyecto references proyecto(id_proyecto)
 );
 
