@@ -1,14 +1,29 @@
 DELIMITER $$
 CREATE PROCEDURE cargaDeDatos(IN idlegajo int, IN nombreapellido varchar(150),IN idproyecto int, IN rol varchar(150), IN horasdiarias int, IN fecha date, OUT respuesta varchar(100))
 begin
-insert into participante (id_legajo, nombre_apellido, id_proyecto, rol)
-values (@idlegajo,@nombreapellido,@idproyecto,@rol);
-if(@horasdiarias<=120) THEN
+if(@rol='administrador') THEN
 begin
-update table participante
-set horas_diarias=@horasdiarias
-and fecha=@fecha
-where id_legajo=@idlegajo
+if(@horasdiarias<=6) THEN
+begin
+insert into participante(id_legajo, nombre_apellido, id_proyecto, rol, horas_diarias, fecha)
+values (@idlegajo, @nombreapellido, @idproyecto, @rol, @horasdiarias,@fecha);
+end if
+end if
+if(@rol='desarrollador') THEN
+begin
+if(@horasdiarias<=12) THEN
+begin
+insert into participante(id_legajo, nombre_apellido, id_proyecto, rol, horas_diarias, fecha)
+values (@idlegajo, @nombreapellido, @idproyecto, @rol, @horasdiarias,@fecha);
+end if
+end if
+if(@rol='manager') THEN
+begin
+if(@horasdiarias<=8) THEN
+begin
+insert into participante(id_legajo, nombre_apellido, id_proyecto, rol, horas_diarias, fecha)
+values (@idlegajo, @nombreapellido, @idproyecto, @rol, @horasdiarias,@fecha);
+end
 end
 else
 set @respuesta='Las horas diarias cargadas exceden las posibles')
