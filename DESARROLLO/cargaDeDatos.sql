@@ -1,33 +1,13 @@
 DELIMITER $$
-CREATE PROCEDURE cargaDeDatos(IN idlegajo int, IN nombreapellido varchar(150),IN idproyecto int, IN rol varchar(150), IN horasdiarias int, IN fecha date, OUT respuesta varchar(100))
+CREATE PROCEDURE cargaDeDatos(IN idlegajo int, IN rol varchar(255), IN id_proyecto int, IN fecha date, IN canthora int)
 begin
-if(@rol='administrador') THEN
+set @cont=0;
+while (cont<5) do
 begin
-if(@horasdiarias<=6) THEN
-begin
-insert into participante(id_legajo, nombre_apellido, id_proyecto, rol, horas_diarias, fecha)
-values (@idlegajo, @nombreapellido, @idproyecto, @rol, @horasdiarias,@fecha);
-end if
-end if
-if(@rol='desarrollador') THEN
-begin
-if(@horasdiarias<=12) THEN
-begin
-insert into participante(id_legajo, nombre_apellido, id_proyecto, rol, horas_diarias, fecha)
-values (@idlegajo, @nombreapellido, @idproyecto, @rol, @horasdiarias,@fecha);
-end if
-end if
-if(@rol='manager') THEN
-begin
-if(@horasdiarias<=8) THEN
-begin
-insert into participante(id_legajo, nombre_apellido, id_proyecto, rol, horas_diarias, fecha)
-values (@idlegajo, @nombreapellido, @idproyecto, @rol, @horasdiarias,@fecha);
-end
-end
-else
-set @respuesta='Las horas diarias cargadas exceden las posibles')
-END IF
+insert into registrohora(id_legajo,rol,id_proyecto,fecha,canthora);
+values(@idlegajo,@rol,@idproyecto,@fecha,@canthora);
+set cont=cont+1;
+end while;
 end
 $$
 DELIMITER;
