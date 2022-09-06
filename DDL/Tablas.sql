@@ -30,7 +30,7 @@ create table registrohora (
 );
 create table liquidacion (
   horas_proyecto int,
-  mes date,
+  mes int auto_increment,
   id_proyecto int,
   rol varchar(255),
 );
