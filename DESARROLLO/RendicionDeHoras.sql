@@ -1,14 +1,11 @@
 use bdd2;
 DELIMITER $$
-create procedure RendicionDeHoras(IN idproyecto int, IN mes date)
+create procedure RendicionDeHoras()
 begin
-INSERT INTO liquidacion (horas_proyecto, horas_cliente)
-SELECT SUM(horas_diarias)
-FROM participante
-WHERE id_proyecto=@idproyecto AND mes=@mes
-UPDATE TABLE cliente
-SET costo=100*horas_cliente
-WHERE id_proyecto=@idproyecto
+insert into liquidacion (id_proyecto, rol, hora_proyecto, mes)
+select id_proyecto, rol, cant_hora, MONTH(fecha)
+from registrohora
+group by rol AND id_proyecto
 end
 $$
 DELIMITER;
