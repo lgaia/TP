@@ -16,17 +16,22 @@ constraint fk_proyecto_cliente foreign key id_cliente references cliente(id_clie
 create table participante (
 id_legajo int not null auto_increment primary key,
 nombre_apellido varchar(150),
-horas_diarias int,
 rol varchar(255),
 id_proyecto int,
-fecha datetime,
 constraint fk_participante_proyecto foreign key id_proyecto references proyecto(id_proyecto)
+);
+create table registrohora (
+  id_legajo int,
+  rol varchar(255),
+  id_proyecto int,
+  fecha date,
+  cant_hora int,
+  constraint fk_registrohora_participante foreign key id_legajo references participante(id_legajo)
 );
 create table liquidacion (
   horas_proyecto int,
-  horas_cliente int,
   mes date,
-  constraint fk_liquidacion_proyecto foreign key horas_proyecto references proyecto(hora_proyecto),
-  constraint fk_liquidacion_cliente foreign key horas_cliente references cliente(horas_mensual)
+  id_proyecto int,
+  rol varchar(255),
 );
 
