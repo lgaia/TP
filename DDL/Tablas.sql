@@ -13,17 +13,12 @@ id_cliente int not null,
 hora_proyecto int,
 constraint fk_proyecto_cliente foreign key id_cliente references cliente(id_cliente)
 );
-create table rol (
-  rol varchar(255) primary key,
-  horas_mensuales int
-);
 create table participante (
 id_legajo int not null auto_increment primary key,
 nombre_apellido varchar(150),
 rol varchar(255),
 id_proyecto int,
 constraint fk_participante_proyecto foreign key id_proyecto references proyecto(id_proyecto),
-constraint fk_rol_participante foreign key rol references rol (nombre_rol)
 );
 create table registrohora (
   id_legajo int,
