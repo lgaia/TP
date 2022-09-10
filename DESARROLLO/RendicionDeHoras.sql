@@ -8,4 +8,4 @@ from registrohora
 group by rol AND id_proyecto
 end
 $$
-DELIMITER;
+
