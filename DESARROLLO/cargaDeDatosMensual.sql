@@ -14,4 +14,3 @@ end;
 end while;
 end
 $$
-DELIMITER;
