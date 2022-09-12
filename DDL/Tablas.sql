@@ -1,4 +1,4 @@
-create database ddb2;
+create database bdd2;
 use bdd2;
 create table cliente (
 id_cliente int not null auto_increment primary key,
