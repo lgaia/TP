@@ -1,20 +1,20 @@
 create database bdd2;
 use bdd2;
 create table cliente (
-id_cliente int not null auto_increment primary key,
+id_cliente int not null primary key,
 costo int,
 facturacion int,
 horas_mensual int
 );
 create table proyecto (
-id_proyecto int not null auto_increment primary key,
+id_proyecto int not null primary key,
 nombre_proyecto varchar (255),
 id_cliente int not null,
 hora_proyecto int,
 constraint fk_proyecto_cliente foreign key (id_cliente) references cliente(id_cliente)
 );
 create table participante (
-id_legajo int not null auto_increment primary key,
+id_legajo int not null primary key,
 nombre_apellido varchar(150),
 rol varchar(255),
 id_proyecto int,
@@ -34,4 +34,7 @@ create table liquidacion (
   id_proyecto int,
   rol varchar(255)
 );
-
+create table numerador {
+  tabla varchar(255) not null PK,
+  siguiente int
+};
