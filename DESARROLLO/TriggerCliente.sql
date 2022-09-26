@@ -10,14 +10,14 @@ begin
 insert into cliente(id_cliente)
 select siguiente
 from numerador
-where numerador.tabla="cliente";
+where numerador.tabla='cliente';
 update table numerador
 set siguiente=siguiente+1
-where numerador.tabla="cliente";
+where numerador.tabla='cliente';
 end;
 else
 insert into numerador(tabla, siguiente)
-values("cliente",1);
+values('cliente',1);
 end if;
 end;
 $$
