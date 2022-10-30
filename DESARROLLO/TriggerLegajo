@@ -1,23 +1,24 @@
 use bdd2;
+use mibase;
 DELIMITER $$
-create trigger legajo_bi before insert on legajo for each row 
+create trigger participante_bi before insert on participante for each row 
 begin
-set @mi_tabla='legajo';
+set @mi_tabla='participante';
 set @hay_dato=0;
 call numeradorCero(@mi_tabla,@hay_dato);
 if(select @hay_dato !=0) then
 begin
-insert into legajo(id_legajo)
+insert into participante(id_legajo)
 select siguiente
 from numerador
-where numerador.tabla='legajo';
-update table numerador
+where numerador.tabla='participante';
+update numerador
 set siguiente=siguiente+1
-where numerador.tabla='legajo';
+where numerador.tabla='participante';
 end;
 else
 insert into numerador(tabla, siguiente)
-values('legajo',1);
+values('participante',1);
 end if;
 end;
 $$
