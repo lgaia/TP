@@ -11,7 +11,7 @@ insert into cliente(id_cliente)
 select siguiente
 from numerador
 where numerador.tabla='cliente';
-update table numerador
+update numerador
 set siguiente=siguiente+1
 where numerador.tabla='cliente';
 end;
