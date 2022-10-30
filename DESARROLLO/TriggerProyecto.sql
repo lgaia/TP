@@ -1,4 +1,5 @@
 use bdd2;
+use mibase;
 DELIMITER $$
 create trigger proyecto_bi before insert on proyecto for each row 
 begin
@@ -11,7 +12,7 @@ insert into proyecto(id_proyecto)
 select siguiente
 from numerador
 where numerador.tabla='proyecto';
-update table numerador
+update numerador
 set siguiente=siguiente+1
 where numerador.tabla='proyecto';
 end;
