@@ -1,5 +1,4 @@
 use bdd2;
-use mibase;
 DELIMITER $$
 create trigger participante_bi before insert on participante for each row 
 begin
